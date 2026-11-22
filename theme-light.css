@@ -1,0 +1,52 @@
+/* HAMFIT V8 — White Neon Day Theme */
+:root{--bg:#f5fafb;--panel:#ffffff;--panel2:#eef5f7;--text:#142b38;--muted:#637985;--cyan:#00bfc9;--cyan2:#00d8d2;--line:rgba(22,65,78,.13);color-scheme:light}
+body{background:var(--bg)!important;color:var(--text)!important}
+.site-header,.site-footer{border-color:var(--line);color:var(--muted)}
+.brand,.site-footer .brand{color:#142b38}.desktop-nav,.login-link{color:#506773}.menu-toggle{color:#142b38}
+h1,h2,h3,h4,strong,.field label,.field-label,.card-heading,.auth-card-heading{color:#142b38}
+p,.muted,.hero-description,.section-heading p,.how-copy>p,.cta p{color:#637985}
+.auth-page,.profile-page,.member-page,.workout-page{background:radial-gradient(ellipse at 80% 12%,rgba(0,191,201,.10),transparent 34%),#f5fafb!important}
+.auth-card,.profile-card,.panel,.side-panel,.exercise-card,.dashboard-card,.feature-card,.step,.cta,.motivation-card{background:linear-gradient(145deg,#ffffff,#edf6f7)!important;color:#18313d!important;border:1px solid rgba(0,150,165,.16)!important;box-shadow:0 14px 42px rgba(25,80,92,.08)}
+.input-wrap,.unit-input,.goal-card,.day-option,.week-day,.week-grid>div,.exercise-kind,.step-progress,.track,.progress-track{background:#edf4f6!important;border-color:rgba(22,65,78,.16)!important;color:#18313d!important}
+.input-wrap input,.unit-input input,.input-wrap input:focus{color:#18313d!important}
+.input-wrap input::placeholder{color:#91a2aa!important}
+.field label,.field-label{color:#294653!important}
+.field-icon,.input-icon,.password-toggle{color:#66808b!important}
+.button-ghost{color:#25434e;border-color:rgba(22,65,78,.2)}
+.button-primary{background:linear-gradient(110deg,#00c8c9,#55e5d7)!important;color:#07343a!important;box-shadow:0 8px 24px rgba(0,191,201,.2)}
+.button-primary:hover{background:#48e0d7!important}
+.floating-chip,.login-highlight,.profile-note,.workout-feature,.session-chip{background:rgba(0,191,201,.07)!important;color:#21434e!important;border-color:rgba(0,160,175,.2)!important;box-shadow:0 10px 30px rgba(20,80,90,.06)}
+.floating-chip b,.floating-chip strong,.dashboard-title,.workout-info strong{color:#173541}
+.week-grid>div,.week-day{color:#294653!important}
+.week-grid small,.week-day small,.dashboard-top,.dashboard-foot,.progress-heading{color:#6d838d!important}
+.feature-card.featured,.goal-card.selected,.day-option.selected,.week-day.planned{background:rgba(0,191,201,.10)!important;border-color:rgba(0,160,175,.4)!important}
+.site-footer,.auth-footer{color:#71858e}
+.auth-footer{border-color:var(--line)}
+.ambient-one,.ambient-two{opacity:.45}
+.logo,.brand img{border-color:rgba(0,160,175,.3)}
+@media(prefers-reduced-motion:no-preference){.feature-card,.button,.panel,.exercise-card{transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease}}
+
+/* Sporty ambient backdrop — subtle equipment line art in the existing cyan palette */
+html{background:#f5fafb}
+body{position:relative;isolation:isolate;overflow-x:hidden}
+body::before{
+  content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
+  background-image:
+    radial-gradient(ellipse at 8% 18%,rgba(0,191,201,.105),transparent 28%),
+    radial-gradient(ellipse at 92% 76%,rgba(0,216,210,.09),transparent 30%),
+    url('../assets/sport-ambient.svg');
+  background-repeat:no-repeat,no-repeat,repeat;
+  background-size: auto,auto,420px 360px;
+  background-position:left top,right bottom,center center;
+  opacity:.72;
+}
+/* Keep the pattern visible around the cards without competing with content */
+.site-header{background:rgba(245,250,251,.76);backdrop-filter:blur(12px)}
+.auth-card,.profile-card,.panel,.side-panel,.exercise-card,.dashboard-card,.feature-card,.step,.cta,.motivation-card{
+  backdrop-filter:blur(7px);
+}
+@media(max-width:700px){body::before{background-size:auto,auto,330px 283px;opacity:.48}}
+@media(prefers-reduced-motion:no-preference){
+  .site-header,.auth-card,.profile-card,.panel,.exercise-card{transition:box-shadow .25s ease,border-color .25s ease}
+  .panel:hover,.exercise-card:hover{box-shadow:0 18px 46px rgba(0,150,165,.12)!important}
+}

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f7fbfc"><title>برنامه تمرینی | HamFit</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css"><link rel="stylesheet" href="css/workout.css">
+  <link rel="stylesheet" href="css/motion.css">
+  <link rel="stylesheet" href="css/theme-light.css">
+</head>
+<body class="workout-page">
+  <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+  <header class="site-header workout-header">
+    <a class="brand" href="index.html"><img src="assets/hamfit-logo.jpeg" alt="لوگوی HamFit"><span>HAM<span>FIT</span></span></a>
+    <nav class="member-nav"><a href="dashboard.html">داشبورد</a><a class="active" href="workout.html">برنامه تمرینی</a><a href="dashboard.html#progress">پیشرفت من</a></nav>
+    <a class="member-profile" href="profile.html"><span class="avatar">H</span><span>پروفایل من</span><b>⌄</b></a>
+  <button class="hamfit-logout" type="button" data-hamfit-logout>خروج از حساب ↗</button>
+  </header>
+
+  <main class="workout-main">
+    <a href="dashboard.html" class="back-dashboard">← بازگشت به داشبورد</a>
+    <section class="workout-heading">
+      <div><span class="eyebrow"><span class="pulse-dot"></span> YOUR TRAINING PLAN</span><h1>وقتشه <span>تمرین کنی.</span></h1><p>برنامه امروزت رو ببین، حرکت‌ها رو انجام بده و پیشرفتت رو ثبت کن.</p></div>
+      <div class="session-chip"><span>ϟ</span><div><b>جلسه تمرینی</b><small>برنامه نمونه فرانت‌اند</small></div></div>
+    </section>
+
+    <section class="session-overview">
+      <div class="session-title"><div><span class="eyebrow">TODAY'S WORKOUT</span><h2 id="sessionName">تمرین تمام‌بدن</h2><p id="sessionDescription">یک جلسه متعادل برای تمرین گروه‌های عضلانی اصلی</p></div><span class="sample-label">نمونه نمایشی</span></div>
+      <div class="session-stats"><div><span>⌂</span><b id="trainingPlaceLabel">باشگاه</b><small>محل تمرین انتخابی</small></div><div><span>◷</span><b>۴۵ دقیقه</b><small>مدت تقریبی</small></div><div><span>▤</span><b id="exerciseCount">۵ حرکت</b><small>تعداد حرکات</small></div><div><span>ϟ</span><b>متوسط</b><small>شدت پیشنهادی</small></div></div>
+      <div class="session-progress"><div><span>پیشرفت جلسه</span><b id="progressLabel">۰ از ۵ حرکت</b></div><div class="progress-track"><i id="sessionProgress"></i></div></div>
+    </section>
+
+    <div class="place-notice" id="placeNotice">برنامه متناسب با محل تمرین انتخابی تو نمایش داده می‌شه.</div>
+    <div class="workout-layout">
+      <section class="exercise-section">
+        <div class="section-heading"><div><span class="eyebrow">EXERCISE LIST</span><h2>حرکات تمرین</h2></div><span class="tiny-muted">برای تکمیل، هر حرکت رو تیک بزن</span></div>
+        <div id="exerciseList" class="exercise-list">
+          <article class="exercise-card" data-exercise="0"><div class="exercise-visual visual-squat"><span>01</span><b>LOWER BODY</b><i>↗</i></div><div class="exercise-content"><div class="exercise-title"><div><h3>اسکوات با وزن بدن</h3><p>Bodyweight Squat</p></div><label class="done-toggle"><input type="checkbox"><span>✓</span></label></div><div class="exercise-details"><span>۳ <small>ست</small></span><span>۱۲ <small>تکرار</small></span><span>۶۰ <small>ثانیه استراحت</small></span></div><p class="exercise-tip">پاها کمی بیشتر از عرض شانه باز؛ زانوها هم‌جهت پنجه‌ها حرکت کنن.</p><div class="muscle-target" data-muscles="quadriceps glutes hamstrings"><span class="muscle-map-icon" aria-hidden="true">◉</span><div><small>عضلات درگیر اصلی</small><b>پایین‌تنه</b><p>چهارسر ران، سرینی و همسترینگ</p></div></div><div class="muscle-anatomy" data-highlight="quadriceps glutes hamstrings">
+      <div class="anatomy-copy"><b>این حرکت کجای بدن رو درگیر می‌کنه؟</b><span>قسمت‌های رنگی، عضلات هدف این حرکت رو نشون می‌دن.</span></div>
+      <div class="body-map">
+       <svg viewBox="0 0 300 190" role="img" aria-label="نقشه عضلات هدف در نمای جلو و پشت بدن">
+        <g class="body-silhouette"><circle cx="76" cy="22" r="12"/><path d="M61 38 Q76 32 91 38 L101 73 L94 104 L88 142 L84 181 L68 181 L64 142 L58 104 L51 73Z"/><path d="M53 44 L35 53 L25 102 L34 105 L51 75 M95 44 L113 53 L123 102 L114 105 L97 75"/></g>
+        <g class="body-silhouette"><circle cx="224" cy="22" r="12"/><path d="M209 38 Q224 32 239 38 L249 73 L242 104 L236 142 L232 181 L216 181 L212 142 L206 104 L199 73Z"/><path d="M201 44 L183 53 L173 102 L182 105 L199 75 M243 44 L261 53 L271 102 L262 105 L245 75"/></g>
+        <g class="muscle-zones">
+         <ellipse class="zone quadriceps" cx="66" cy="126" rx="8" ry="24"/><ellipse class="zone quadriceps" cx="86" cy="126" rx="8" ry="24"/>
+         <ellipse class="zone glutes" cx="67" cy="91" rx="10" ry="9"/><ellipse class="zone glutes" cx="85" cy="91" rx="10" ry="9"/>
+         <ellipse class="zone hamstrings" cx="214" cy="126" rx="8" ry="24"/><ellipse class="zone hamstrings" cx="234" cy="126" rx="8" ry="24"/>
+         <ellipse class="zone chest" cx="66" cy="59" rx="10" ry="9"/><ellipse class="zone chest" cx="86" cy="59" rx="10" ry="9"/>
+         <ellipse class="zone triceps" cx="39" cy="65" rx="6" ry="15"/><ellipse class="zone triceps" cx="113" cy="65" rx="6" ry="15"/>
+         <ellipse class="zone front-delts" cx="54" cy="47" rx="8" ry="7"/><ellipse class="zone front-delts" cx="98" cy="47" rx="8" ry="7"/>
+         <ellipse class="zone lats" cx="214" cy="63" rx="12" ry="20"/><ellipse class="zone lats" cx="234" cy="63" rx="12" ry="20"/>
+         <ellipse class="zone rhomboids" cx="224" cy="54" rx="9" ry="12"/>
+         <ellipse class="zone biceps" cx="39" cy="65" rx="5" ry="12"/><ellipse class="zone biceps" cx="113" cy="65" rx="5" ry="12"/>
+         <rect class="zone abs" x="68" y="69" width="16" height="25" rx="6"/><ellipse class="zone obliques" cx="59" cy="79" rx="5" ry="13"/><ellipse class="zone obliques" cx="93" cy="79" rx="5" ry="13"/><ellipse class="zone core" cx="224" cy="83" rx="13" ry="16"/>
+        </g>
+       </svg><div class="anatomy-legend"><span><i></i> عضلات اصلی درگیر</span><small>نمای جلو ← | → نمای پشت</small></div>
+      </div></div><button class="detail-toggle" type="button">نکته اجرای حرکت <span>⌄</span></button></div></article>
+          <article class="exercise-card" data-exercise="1"><div class="exercise-visual visual-push"><span>02</span><b>UPPER BODY</b><i>⌁</i></div><div class="exercise-content"><div class="exercise-title"><div><h3>شنا سوئدی</h3><p>Push-up</p></div><label class="done-toggle"><input type="checkbox"><span>✓</span></label></div><div class="exercise-details"><span>۳ <small>ست</small></span><span>۱۰ <small>تکرار</small></span><span>۶۰ <small>ثانیه استراحت</small></span></div><p class="exercise-tip">بدن رو در یک خط نگه دار و آرنج‌ها رو با کنترل خم کن.</p><div class="muscle-target" data-muscles="chest triceps front-delts"><span class="muscle-map-icon" aria-hidden="true">◉</span><div><small>عضلات درگیر اصلی</small><b>سینه و پشت بازو</b><p>سینه، سه‌سر بازویی و جلوی سرشانه</p></div></div><div class="muscle-anatomy" data-highlight="chest triceps front-delts">
+      <div class="anatomy-copy"><b>این حرکت کجای بدن رو درگیر می‌کنه؟</b><span>قسمت‌های رنگی، عضلات هدف این حرکت رو نشون می‌دن.</span></div>
+      <div class="body-map">
+       <svg viewBox="0 0 300 190" role="img" aria-label="نقشه عضلات هدف در نمای جلو و پشت بدن">
+        <g class="body-silhouette"><circle cx="76" cy="22" r="12"/><path d="M61 38 Q76 32 91 38 L101 73 L94 104 L88 142 L84 181 L68 181 L64 142 L58 104 L51 73Z"/><path d="M53 44 L35 53 L25 102 L34 105 L51 75 M95 44 L113 53 L123 102 L114 105 L97 75"/></g>
+        <g class="body-silhouette"><circle cx="224" cy="22" r="12"/><path d="M209 38 Q224 32 239 38 L249 73 L242 104 L236 142 L232 181 L216 181 L212 142 L206 104 L199 73Z"/><path d="M201 44 L183 53 L173 102 L182 105 L199 75 M243 44 L261 53 L271 102 L262 105 L245 75"/></g>
+        <g class="muscle-zones">
+         <ellipse class="zone quadriceps" cx="66" cy="126" rx="8" ry="24"/><ellipse class="zone quadriceps" cx="86" cy="126" rx="8" ry="24"/>
+         <ellipse class="zone glutes" cx="67" cy="91" rx="10" ry="9"/><ellipse class="zone glutes" cx="85" cy="91" rx="10" ry="9"/>
+         <ellipse class="zone hamstrings" cx="214" cy="126" rx="8" ry="24"/><ellipse class="zone hamstrings" cx="234" cy="126" rx="8" ry="24"/>
+         <ellipse class="zone chest" cx="66" cy="59" rx="10" ry="9"/><ellipse class="zone chest" cx="86" cy="59" rx="10" ry="9"/>
+         <ellipse class="zone triceps" cx="39" cy="65" rx="6" ry="15"/><ellipse class="zone triceps" cx="113" cy="65" rx="6" ry="15"/>
+         <ellipse class="zone front-delts" cx="54" cy="47" rx="8" ry="7"/><ellipse class="zone front-delts" cx="98" cy="47" rx="8" ry="7"/>
+         <ellipse class="zone lats" cx="214" cy="63" rx="12" ry="20"/><ellipse class="zone lats" cx="234" cy="63" rx="12" ry="20"/>
+         <ellipse class="zone rhomboids" cx="224" cy="54" rx="9" ry="12"/>
+         <ellipse class="zone biceps" cx="39" cy="65" rx="5" ry="12"/><ellipse class="zone biceps" cx="113" cy="65" rx="5" ry="12"/>
+         <rect class="zone abs" x="68" y="69" width="16" height="25" rx="6"/><ellipse class="zone obliques" cx="59" cy="79" rx="5" ry="13"/><ellipse class="zone obliques" cx="93" cy="79" rx="5" ry="13"/><ellipse class="zone core" cx="224" cy="83" rx="13" ry="16"/>
+        </g>
+       </svg><div class="anatomy-legend"><span><i></i> عضلات اصلی درگیر</span><small>نمای جلو ← | → نمای پشت</small></div>
+      </div></div><button class="detail-toggle" type="button">نکته اجرای حرکت <span>⌄</span></button></div></article>
+          <article class="exercise-card" data-exercise="2"><div class="exercise-visual visual-row"><span>03</span><b>BACK</b><i>ϟ</i></div><div class="exercise-content"><div class="exercise-title"><div><h3>پارویی دمبل</h3><p>Dumbbell Row</p></div><label class="done-toggle"><input type="checkbox"><span>✓</span></label></div><div class="exercise-details"><span>۳ <small>ست</small></span><span>۱۲ <small>تکرار</small></span><span>۶۰ <small>ثانیه استراحت</small></span></div><p class="exercise-tip">کمر خنثی، شکم منقبض و دمبل رو به سمت لگن بکش.</p><div class="muscle-target" data-muscles="lats rhomboids biceps"><span class="muscle-map-icon" aria-hidden="true">◉</span><div><small>عضلات درگیر اصلی</small><b>پشت و جلو بازو</b><p>پشتی بزرگ، رومبوئید و جلو بازو</p></div></div><div class="muscle-anatomy" data-highlight="lats rhomboids biceps">
+      <div class="anatomy-copy"><b>این حرکت کجای بدن رو درگیر می‌کنه؟</b><span>قسمت‌های رنگی، عضلات هدف این حرکت رو نشون می‌دن.</span></div>
+      <div class="body-map">
+       <svg viewBox="0 0 300 190" role="img" aria-label="نقشه عضلات هدف در نمای جلو و پشت بدن">
+        <g class="body-silhouette"><circle cx="76" cy="22" r="12"/><path d="M61 38 Q76 32 91 38 L101 73 L94 104 L88 142 L84 181 L68 181 L64 142 L58 104 L51 73Z"/><path d="M53 44 L35 53 L25 102 L34 105 L51 75 M95 44 L113 53 L123 102 L114 105 L97 75"/></g>
+        <g class="body-silhouette"><circle cx="224" cy="22" r="12"/><path d="M209 38 Q224 32 239 38 L249 73 L242 104 L236 142 L232 181 L216 181 L212 142 L206 104 L199 73Z"/><path d="M201 44 L183 53 L173 102 L182 105 L199 75 M243 44 L261 53 L271 102 L262 105 L245 75"/></g>
+        <g class="muscle-zones">
+         <ellipse class="zone quadriceps" cx="66" cy="126" rx="8" ry="24"/><ellipse class="zone quadriceps" cx="86" cy="126" rx="8" ry="24"/>
+         <ellipse class="zone glutes" cx="67" cy="91" rx="10" ry="9"/><ellipse class="zone glutes" cx="85" cy="91" rx="10" ry="9"/>
+         <ellipse class="zone hamstrings" cx="214" cy="126" rx="8" ry="24"/><ellipse class="zone hamstrings" cx="234" cy="126" rx="8" ry="24"/>
+         <ellipse class="zone chest" cx="66" cy="59" rx="10" ry="9"/><ellipse class="zone chest" cx="86" cy="59" rx="10" ry="9"/>
+         <ellipse class="zone triceps" cx="39" cy="65" rx="6" ry="15"/><ellipse class="zone triceps" cx="113" cy="65" rx="6" ry="15"/>
+         <ellipse class="zone front-delts" cx="54" cy="47" rx="8" ry="7"/><ellipse class="zone front-delts" cx="98" cy="47" rx="8" ry="7"/>
+         <ellipse class="zone lats" cx="214" cy="63" rx="12" ry="20"/><ellipse class="zone lats" cx="234" cy="63" rx="12" ry="20"/>
+         <ellipse class="zone rhomboids" cx="224" cy="54" rx="9" ry="12"/>
+         <ellipse class="zone biceps" cx="39" cy="65" rx="5" ry="12"/><ellipse class="zone biceps" cx="113" cy="65" rx="5" ry="12"/>
+         <rect class="zone abs" x="68" y="69" width="16" height="25" rx="6"/><ellipse class="zone obliques" cx="59" cy="79" rx="5" ry="13"/><ellipse class="zone obliques" cx="93" cy="79" rx="5" ry="13"/><ellipse class="zone core" cx="224" cy="83" rx="13" ry="16"/>
+        </g>
+       </svg><div class="anatomy-legend"><span><i></i> عضلات اصلی درگیر</span><small>نمای جلو ← | → نمای پشت</small></div>
+      </div></div><button class="detail-toggle" type="button">نکته اجرای حرکت <span>⌄</span></button></div></article>
+          <article class="exercise-card" data-exercise="3"><div class="exercise-visual visual-bridge"><span>04</span><b>GLUTES</b><i>⌁</i></div><div class="exercise-content"><div class="exercise-title"><div><h3>پل باسن</h3><p>Glute Bridge</p></div><label class="done-toggle"><input type="checkbox"><span>✓</span></label></div><div class="exercise-details"><span>۳ <small>ست</small></span><span>۱۵ <small>تکرار</small></span><span>۴۵ <small>ثانیه استراحت</small></span></div><p class="exercise-tip">با فشار پاشنه‌ها لگن رو بالا بیار و بالای حرکت مکث کن.</p><div class="muscle-target" data-muscles="glutes hamstrings"><span class="muscle-map-icon" aria-hidden="true">◉</span><div><small>عضلات درگیر اصلی</small><b>باسن و پشت پا</b><p>سرینی بزرگ و همسترینگ</p></div></div><div class="muscle-anatomy" data-highlight="glutes hamstrings">
+      <div class="anatomy-copy"><b>این حرکت کجای بدن رو درگیر می‌کنه؟</b><span>قسمت‌های رنگی، عضلات هدف این حرکت رو نشون می‌دن.</span></div>
+      <div class="body-map">
+       <svg viewBox="0 0 300 190" role="img" aria-label="نقشه عضلات هدف در نمای جلو و پشت بدن">
+        <g class="body-silhouette"><circle cx="76" cy="22" r="12"/><path d="M61 38 Q76 32 91 38 L101 73 L94 104 L88 142 L84 181 L68 181 L64 142 L58 104 L51 73Z"/><path d="M53 44 L35 53 L25 102 L34 105 L51 75 M95 44 L113 53 L123 102 L114 105 L97 75"/></g>
+        <g class="body-silhouette"><circle cx="224" cy="22" r="12"/><path d="M209 38 Q224 32 239 38 L249 73 L242 104 L236 142 L232 181 L216 181 L212 142 L206 104 L199 73Z"/><path d="M201 44 L183 53 L173 102 L182 105 L199 75 M243 44 L261 53 L271 102 L262 105 L245 75"/></g>
+        <g class="muscle-zones">
+         <ellipse class="zone quadriceps" cx="66" cy="126" rx="8" ry="24"/><ellipse class="zone quadriceps" cx="86" cy="126" rx="8" ry="24"/>
+         <ellipse class="zone glutes" cx="67" cy="91" rx="10" ry="9"/><ellipse class="zone glutes" cx="85" cy="91" rx="10" ry="9"/>
+         <ellipse class="zone hamstrings" cx="214" cy="126" rx="8" ry="24"/><ellipse class="zone hamstrings" cx="234" cy="126" rx="8" ry="24"/>
+         <ellipse class="zone chest" cx="66" cy="59" rx="10" ry="9"/><ellipse class="zone chest" cx="86" cy="59" rx="10" ry="9"/>
+         <ellipse class="zone triceps" cx="39" cy="65" rx="6" ry="15"/><ellipse class="zone triceps" cx="113" cy="65" rx="6" ry="15"/>
+         <ellipse class="zone front-delts" cx="54" cy="47" rx="8" ry="7"/><ellipse class="zone front-delts" cx="98" cy="47" rx="8" ry="7"/>
+         <ellipse class="zone lats" cx="214" cy="63" rx="12" ry="20"/><ellipse class="zone lats" cx="234" cy="63" rx="12" ry="20"/>
+         <ellipse class="zone rhomboids" cx="224" cy="54" rx="9" ry="12"/>
+         <ellipse class="zone biceps" cx="39" cy="65" rx="5" ry="12"/><ellipse class="zone biceps" cx="113" cy="65" rx="5" ry="12"/>
+         <rect class="zone abs" x="68" y="69" width="16" height="25" rx="6"/><ellipse class="zone obliques" cx="59" cy="79" rx="5" ry="13"/><ellipse class="zone obliques" cx="93" cy="79" rx="5" ry="13"/><ellipse class="zone core" cx="224" cy="83" rx="13" ry="16"/>
+        </g>
+       </svg><div class="anatomy-legend"><span><i></i> عضلات اصلی درگیر</span><small>نمای جلو ← | → نمای پشت</small></div>
+      </div></div><button class="detail-toggle" type="button">نکته اجرای حرکت <span>⌄</span></button></div></article>
+          <article class="exercise-card" data-exercise="4"><div class="exercise-visual visual-plank"><span>05</span><b>CORE</b><i>◎</i></div><div class="exercise-content"><div class="exercise-title"><div><h3>پلانک</h3><p>Plank</p></div><label class="done-toggle"><input type="checkbox"><span>✓</span></label></div><div class="exercise-details"><span>۳ <small>ست</small></span><span>۳۰ <small>ثانیه</small></span><span>۴۵ <small>ثانیه استراحت</small></span></div><p class="exercise-tip">شکم رو منقبض نگه دار و اجازه نده لگن بیفته یا بیش از حد بالا بره.</p><div class="muscle-target" data-muscles="abs obliques core"><span class="muscle-map-icon" aria-hidden="true">◉</span><div><small>عضلات درگیر اصلی</small><b>شکم و میان‌تنه</b><p>راست شکمی، عرضی شکم و عضلات مرکزی</p></div></div><div class="muscle-anatomy" data-highlight="abs obliques core">
+      <div class="anatomy-copy"><b>این حرکت کجای بدن رو درگیر می‌کنه؟</b><span>قسمت‌های رنگی، عضلات هدف این حرکت رو نشون می‌دن.</span></div>
+      <div class="body-map">
+       <svg viewBox="0 0 300 190" role="img" aria-label="نقشه عضلات هدف در نمای جلو و پشت بدن">
+        <g class="body-silhouette"><circle cx="76" cy="22" r="12"/><path d="M61 38 Q76 32 91 38 L101 73 L94 104 L88 142 L84 181 L68 181 L64 142 L58 104 L51 73Z"/><path d="M53 44 L35 53 L25 102 L34 105 L51 75 M95 44 L113 53 L123 102 L114 105 L97 75"/></g>
+        <g class="body-silhouette"><circle cx="224" cy="22" r="12"/><path d="M209 38 Q224 32 239 38 L249 73 L242 104 L236 142 L232 181 L216 181 L212 142 L206 104 L199 73Z"/><path d="M201 44 L183 53 L173 102 L182 105 L199 75 M243 44 L261 53 L271 102 L262 105 L245 75"/></g>
+        <g class="muscle-zones">
+         <ellipse class="zone quadriceps" cx="66" cy="126" rx="8" ry="24"/><ellipse class="zone quadriceps" cx="86" cy="126" rx="8" ry="24"/>
+         <ellipse class="zone glutes" cx="67" cy="91" rx="10" ry="9"/><ellipse class="zone glutes" cx="85" cy="91" rx="10" ry="9"/>
+         <ellipse class="zone hamstrings" cx="214" cy="126" rx="8" ry="24"/><ellipse class="zone hamstrings" cx="234" cy="126" rx="8" ry="24"/>
+         <ellipse class="zone chest" cx="66" cy="59" rx="10" ry="9"/><ellipse class="zone chest" cx="86" cy="59" rx="10" ry="9"/>
+         <ellipse class="zone triceps" cx="39" cy="65" rx="6" ry="15"/><ellipse class="zone triceps" cx="113" cy="65" rx="6" ry="15"/>
+         <ellipse class="zone front-delts" cx="54" cy="47" rx="8" ry="7"/><ellipse class="zone front-delts" cx="98" cy="47" rx="8" ry="7"/>
+         <ellipse class="zone lats" cx="214" cy="63" rx="12" ry="20"/><ellipse class="zone lats" cx="234" cy="63" rx="12" ry="20"/>
+         <ellipse class="zone rhomboids" cx="224" cy="54" rx="9" ry="12"/>
+         <ellipse class="zone biceps" cx="39" cy="65" rx="5" ry="12"/><ellipse class="zone biceps" cx="113" cy="65" rx="5" ry="12"/>
+         <rect class="zone abs" x="68" y="69" width="16" height="25" rx="6"/><ellipse class="zone obliques" cx="59" cy="79" rx="5" ry="13"/><ellipse class="zone obliques" cx="93" cy="79" rx="5" ry="13"/><ellipse class="zone core" cx="224" cy="83" rx="13" ry="16"/>
+        </g>
+       </svg><div class="anatomy-legend"><span><i></i> عضلات اصلی درگیر</span><small>نمای جلو ← | → نمای پشت</small></div>
+      </div></div><button class="detail-toggle" type="button">نکته اجرای حرکت <span>⌄</span></button></div></article>
+        </div>
+      </section>
+
+      <aside class="workout-sidebar">
+        <article class="side-panel completion-panel"><span class="side-icon">✓</span><h3>تمرینت رو کامل کن</h3><p>بعد از انجام هر حرکت، تیک کن تا درصد پیشرفتت به‌روز بشه.</p><div class="big-progress" id="bigProgress">۰٪</div><div class="progress-track"><i id="sideProgress"></i></div><small id="completionCaption">هنوز حرکتی ثبت نشده</small><button type="button" class="finish-button" id="finishWorkout" disabled>ثبت پایان تمرین</button><p class="finish-message" id="finishMessage" role="status"></p></article>
+        <article class="side-panel rest-panel"><span class="eyebrow">REST TIMER</span><h3>تایمر استراحت</h3><p>بین ست‌ها زمان استراحتت رو مدیریت کن.</p><div class="timer-display" id="timerDisplay">۰۱:۰۰</div><div class="timer-controls"><button type="button" id="timerStart">شروع</button><button type="button" id="timerReset">ریست</button></div><div class="timer-presets"><button type="button" data-seconds="45">۴۵ ثانیه</button><button type="button" data-seconds="60" class="active">۶۰ ثانیه</button><button type="button" data-seconds="90">۹۰ ثانیه</button></div></article>
+        <article class="safety-note"><span>ⓘ</span><p>حرکات این صفحه نمونه‌اند. وزنه و شدت رو متناسب با توانت انتخاب کن و در صورت درد یا ناراحتی، تمرین رو متوقف کن.</p></article>
+      </aside>
+    </div>
+    <p class="demo-disclaimer">نسخه نمایشی رابط کاربری — حرکات، ست‌ها و تکرارها هنوز از API جنگو دریافت نمی‌شن.</p>
+  </main>
+  <footer class="auth-footer"><span>© ۲۰۲۶ HamFit</span><span>قوی‌تر شو؛ با برنامه، با حام فیت.</span></footer>
+  <script src="js/auth.js"></script>
+  <script src="js/workout.js"></script>
+  <script src="js/motion.js" defer></script>
+</body></html>

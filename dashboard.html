@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f7fbfc">
+  <title>داشبورد من | HamFit</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+  <link rel="stylesheet" href="css/motion.css">
+  <link rel="stylesheet" href="css/theme-light.css">
+</head>
+<body class="member-page">
+  <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+  <header class="site-header member-header">
+    <a class="brand" href="index.html"><img src="assets/hamfit-logo.jpeg" alt="لوگوی HamFit"><span>HAM<span>FIT</span></span></a>
+    <nav class="member-nav"><a class="active" href="dashboard.html">داشبورد</a><a href="workout.html">برنامه تمرینی</a><a href="#progress">پیشرفت من</a></nav>
+    <a class="member-profile" href="profile.html"><span class="avatar">H</span><span>پروفایل من</span><b>⌄</b></a>
+  <button class="hamfit-logout" type="button" data-hamfit-logout>خروج از حساب ↗</button>
+  </header>
+
+  <main class="member-main">
+    <section class="welcome-row">
+      <div><span class="eyebrow"><span class="pulse-dot"></span> پنل اختصاصی حام فیت</span><h1>سلام، <span id="userName">قهرمان</span>! 👋</h1><p>آماده‌ای امروز یه قدم به هدفت نزدیک‌تر بشی؟</p></div>
+      <a class="button button-primary edit-profile" href="workout.html">رفتن به تمرین <span>←</span></a>
+    </section>
+
+    <section class="summary-grid" aria-label="خلاصه اطلاعات">
+      <article class="summary-card"><div class="summary-top"><span>وزن فعلی</span><i>⌁</i></div><strong><span id="weightValue">—</span><small>کیلوگرم</small></strong><p>آخرین وزن ثبت‌شده</p></article>
+      <article class="summary-card"><div class="summary-top"><span>قد</span><i>↕</i></div><strong><span id="heightValue">—</span><small>سانتی‌متر</small></strong><p>اطلاعات پروفایل</p></article>
+      <article class="summary-card"><div class="summary-top"><span>روز تمرین</span><i>▦</i></div><strong><span id="daysValue">۴</span><small>روز در هفته</small></strong><p>برنامه هفتگی انتخابی</p></article>
+      <article class="summary-card"><div class="summary-top"><span>هدف تمرینی</span><i>✦</i></div><strong class="goal-value" id="goalValue">تناسب اندام</strong><p>هدف انتخاب‌شده</p></article>
+    </section>
+
+    <section class="dashboard-columns">
+      <div class="main-column">
+        <article class="panel week-panel" id="progress">
+          <div class="panel-heading"><div><span class="eyebrow">CONSISTENCY</span><h2>برنامه این هفته</h2></div><span class="week-badge">نمای هفتگی</span></div>
+          <p class="panel-subtitle">روزهای تمرینت رو علامت بزن و روندت رو دنبال کن.</p>
+          <div class="week-days" id="weekDays">
+            <button class="week-day" data-day="شنبه"><small>ش</small><b>۱</b><i></i></button>
+            <button class="week-day" data-day="یکشنبه"><small>ی</small><b>۲</b><i></i></button>
+            <button class="week-day" data-day="دوشنبه"><small>د</small><b>۳</b><i></i></button>
+            <button class="week-day" data-day="سه‌شنبه"><small>س</small><b>۴</b><i></i></button>
+            <button class="week-day" data-day="چهارشنبه"><small>چ</small><b>۵</b><i></i></button>
+            <button class="week-day" data-day="پنجشنبه"><small>پ</small><b>۶</b><i></i></button>
+            <button class="week-day" data-day="جمعه"><small>ج</small><b>۷</b><i></i></button>
+          </div>
+          <div class="week-legend"><span><i class="legend-dot planned"></i> روز تمرین انتخابی</span><span><i class="legend-dot completed"></i> انجام‌شده (نمایشی)</span></div>
+          <div class="progress-line"><div><span>پیشرفت ثبت‌شده</span><b id="progressText">۰٪</b></div><div class="track"><i id="progressBar"></i></div></div>
+        </article>
+
+        <article class="panel workout-panel" id="workout">
+          <div class="panel-heading"><div><span class="eyebrow">YOUR WORKOUT</span><h2>تمرین امروز</h2></div><span class="today-tag">پیشنهاد نمونه</span></div>
+          <div class="workout-feature">
+            <div class="workout-art"><span>ϟ</span><small>HAMFIT TRAINING</small></div>
+            <div class="workout-description"><h3 id="workoutTitle">تمرین قدرتی تمام‌بدن</h3><p>یک نمونه برای نمایش ظاهر برنامه تمرینی. برنامه نهایی باید از بک‌اند دریافت بشه.</p><div class="workout-meta"><span>◷ حدود ۴۵ دقیقه</span><span>▤ ۵ حرکت نمونه</span></div></div>
+          </div>
+          <div class="exercise-list">
+            <div class="exercise"><span class="exercise-number">۰۱</span><div><b>اسکوات با وزن بدن</b><small>۳ ست · ۱۲ تکرار</small></div><span class="exercise-kind">پایین‌تنه</span></div>
+            <div class="exercise"><span class="exercise-number">۰۲</span><div><b>شنا سوئدی</b><small>۳ ست · ۱۰ تکرار</small></div><span class="exercise-kind">بالاتنه</span></div>
+            <div class="exercise"><span class="exercise-number">۰۳</span><div><b>پارویی دمبل</b><small>۳ ست · ۱۲ تکرار</small></div><span class="exercise-kind">پشت</span></div>
+            <div class="exercise"><span class="exercise-number">۰۴</span><div><b>پل باسن</b><small>۳ ست · ۱۵ تکرار</small></div><span class="exercise-kind">پایین‌تنه</span></div>
+            <div class="exercise"><span class="exercise-number">۰۵</span><div><b>پلانک</b><small>۳ ست · ۳۰ ثانیه</small></div><span class="exercise-kind">میان‌تنه</span></div>
+          </div>
+          <div class="workout-actions"><button type="button" class="button button-primary" id="completeWorkout">✓ ثبت انجام تمرین</button><span id="workoutStatus" role="status">هنوز تمرینی ثبت نکردی</span></div>
+        </article>
+      </div>
+
+      <aside class="side-column">
+        <article class="panel goal-panel"><div class="panel-heading"><div><span class="eyebrow">YOUR TARGET</span><h2>هدف تو</h2></div><span class="target-icon">◎</span></div><div class="goal-orbit"><div><span>هدف اصلی</span><b id="goalLarge">تناسب اندام</b></div></div><p id="goalDescription">با استمرار و تمرین اصولی، قدم‌به‌قدم به هدفت نزدیک شو.</p><a href="profile.html" class="text-link">ویرایش هدف <span>←</span></a></article>
+        <article class="panel bmi-panel">
+          <div class="panel-heading"><div><span class="eyebrow">BODY MASS INDEX</span><h2>شاخص توده بدنی (BMI)</h2></div><span class="target-icon">⌁</span></div>
+          <div class="bmi-result"><strong id="bmiValue">—</strong><span id="bmiStatus">اطلاعات قد و وزن را وارد کن</span></div>
+          <div class="bmi-scale"><i></i><i></i><i></i><i></i></div>
+          <div class="bmi-legend"><span>کمبود وزن</span><span>محدوده معمول</span><span>اضافه وزن</span><span>چاقی</span></div>
+          <p class="bmi-note" id="bmiNote">BMI فقط یک شاخص غربالگریه و به‌تنهایی تشخیص پزشکی یا معیار کامل تناسب اندام نیست.</p>
+        </article>
+        <article class="panel profile-mini"><div class="panel-heading"><div><span class="eyebrow">YOUR PROFILE</span><h2>مشخصات من</h2></div><span class="target-icon">♙</span></div><div class="profile-line"><span>سن</span><b id="ageValue">—</b></div><div class="profile-line"><span>سطح تمرین</span><b id="levelValue">مبتدی</b></div><div class="profile-line"><span>قد / وزن</span><b id="bodyValue">—</b></div><a href="profile.html" class="text-link">تکمیل یا ویرایش پروفایل <span>←</span></a></article>
+        <article class="motivation-card"><span>✦</span><h3>هر تکرار،<br>یه قدم جلوتر.</h3><p>قرار نیست هر روز عالی باشی؛ فقط ادامه بده.</p><small>HAMFIT · STRONGER TOGETHER</small></article>
+      </aside>
+    </section>
+    <p class="demo-disclaimer">این داشبورد در حال حاضر نسخه نمایشی فرانت‌اند است؛ اطلاعات و تمرین‌ها نمونه‌اند و هنوز از Django دریافت نمی‌شوند.</p>
+  </main>
+  <footer class="auth-footer"><span>© ۲۰۲۶ HamFit</span><span>قوی‌تر شو؛ با برنامه، با حام فیت.</span></footer>
+  <script src="js/auth.js"></script>
+  <script src="js/dashboard.js"></script>
+  <script src="js/motion.js" defer></script>
+</body>
+</html>

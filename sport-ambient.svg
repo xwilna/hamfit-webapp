@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="360" viewBox="0 0 420 360" fill="none">
+  <g stroke="#00aeb9" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" opacity=".28">
+    <!-- dumbbell -->
+    <g transform="translate(35 42) rotate(-18 75 50)">
+      <path d="M35 50h82"/><path d="M25 28v44M38 20v60M117 20v60M130 28v44"/><path d="M25 28h13v44H25zM117 20h13v60h-13z"/>
+    </g>
+    <!-- kettlebell -->
+    <g transform="translate(250 35)">
+      <path d="M32 52c0-20 12-34 28-34s28 14 28 34"/><path d="M23 59c0-8 7-14 16-14h42c9 0 16 6 16 14l-5 53c-1 12-12 21-24 21H52c-12 0-23-9-24-21z"/>
+      <path d="M47 70h26"/>
+    </g>
+    <!-- barbell -->
+    <g transform="translate(30 220) rotate(12 90 35)">
+      <path d="M22 36h140M20 15v42M34 7v58M150 7v58M164 15v42"/>
+    </g>
+    <!-- running shoe / motion -->
+    <g transform="translate(260 215) rotate(-12 60 45)">
+      <path d="M17 64c15-2 24-11 30-27l9-23c3-7 10-7 13 0l13 25c5 9 15 14 28 17 10 2 17 8 17 16v8H17c-7 0-10-8 0-16z"/>
+      <path d="M51 40l15 8M60 29l15 9M72 21l13 10M19 78h108"/>
+    </g>
+    <circle cx="210" cy="180" r="76" stroke-dasharray="5 10" opacity=".16"/>
+    <path d="M200 180h20M210 170v20" opacity=".18"/>
+  </g>
+</svg>

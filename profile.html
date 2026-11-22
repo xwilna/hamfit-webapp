@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f7fbfc">
+  <title>اطلاعات بدنی | HamFit</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/profile.css">
+  <link rel="stylesheet" href="css/motion.css">
+  <link rel="stylesheet" href="css/theme-light.css">
+</head>
+<body class="profile-page">
+  <div class="ambient ambient-one"></div>
+  <div class="ambient ambient-two"></div>
+  <header class="site-header profile-header">
+    <a class="brand" href="index.html"><img src="assets/hamfit-logo.jpeg" alt="لوگوی HamFit"><span>HAM<span>FIT</span></span></a>
+    <div class="header-progress"><span>تکمیل پروفایل</span><div><i></i></div><b>۲ از ۳</b></div>
+    <a class="exit-link" href="index.html">خروج <span>↗</span></a>
+  <button class="hamfit-logout" type="button" data-hamfit-logout>خروج از حساب ↗</button>
+  </header>
+
+  <main class="profile-main">
+    <div class="page-intro">
+      <span class="eyebrow"><span class="pulse-dot"></span> قدم بعدی برای برنامه شخصی تو</span>
+      <h1>بدنت رو <span>بهتر بشناسیم.</span></h1>
+      <p>چندتا اطلاعات کوتاه وارد کن تا حام فیت بتونه برنامه مناسب‌تری برات آماده کنه.</p>
+    </div>
+
+    <form id="profileForm" class="profile-card" novalidate>
+      <div class="form-section">
+        <div class="section-title"><span class="section-icon">♙</span><div><h2>اطلاعات پایه</h2><p>مشخصات فعلی خودت رو وارد کن.</p></div></div>
+        <div class="fields-grid">
+          <div class="field">
+            <label for="age">سن <small>(سال)</small></label>
+            <div class="unit-input"><input id="age" name="age" type="number" min="13" max="100" placeholder="مثلاً ۲۲" required><span>سال</span></div>
+            <small class="error" id="ageError"></small>
+          </div>
+          <div class="field">
+            <label for="height">قد <small>(سانتی‌متر)</small></label>
+            <div class="unit-input"><input id="height" name="height" type="number" min="100" max="230" placeholder="مثلاً ۱۸۰" required><span>cm</span></div>
+            <small class="error" id="heightError"></small>
+          </div>
+          <div class="field">
+            <label for="weight">وزن <small>(کیلوگرم)</small></label>
+            <div class="unit-input"><input id="weight" name="weight" type="number" min="30" max="300" step="0.1" placeholder="مثلاً ۷۵" required><span>kg</span></div>
+            <small class="error" id="weightError"></small>
+          </div>
+          <div class="field">
+            <label>جنسیت <small>(اختیاری)</small></label>
+            <div class="choice-row gender-options">
+              <label class="choice"><input type="radio" name="gender" value="male"><span>مرد</span></label>
+              <label class="choice"><input type="radio" name="gender" value="female"><span>زن</span></label>
+              <label class="choice"><input type="radio" name="gender" value="prefer_not_to_say" checked><span>ترجیح می‌دم نگم</span></label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-divider"></div>
+
+      <div class="form-section">
+        <div class="section-title"><span class="section-icon">⌂</span><div><h2>کجا تمرین می‌کنی؟</h2><p>برنامه‌ات بر اساس امکانات محل تمرینت تنظیم می‌شه.</p></div></div>
+        <div class="choice-row level-options training-place-options">
+          <label class="choice"><input type="radio" name="training_place" value="gym" checked><span><b>باشگاه</b><small>دستگاه، هالتر و دمبل</small></span></label>
+          <label class="choice"><input type="radio" name="training_place" value="home"><span><b>خانه</b><small>وزن بدن و تجهیزات در دسترس</small></span></label>
+        </div>
+      </div>
+
+      <div class="form-divider"></div>
+
+      <div class="form-section">
+        <div class="section-title"><span class="section-icon">◎</span><div><h2>هدفت چیه؟</h2><p>مهم‌ترین چیزی که می‌خوای بهش برسی رو انتخاب کن.</p></div></div>
+        <div class="goal-grid">
+          <label class="goal-option"><input type="radio" name="goal" value="muscle_gain" required><span class="goal-card"><i>↗</i><b>عضله‌سازی</b><small>افزایش حجم و قدرت عضلات</small><em>✓</em></span></label>
+          <label class="goal-option"><input type="radio" name="goal" value="fat_loss"><span class="goal-card"><i>⌁</i><b>کاهش چربی</b><small>کاهش چربی و حفظ عضله</small><em>✓</em></span></label>
+          <label class="goal-option"><input type="radio" name="goal" value="fitness"><span class="goal-card"><i>✦</i><b>تناسب اندام</b><small>سلامت و آمادگی جسمانی</small><em>✓</em></span></label>
+          <label class="goal-option"><input type="radio" name="goal" value="strength"><span class="goal-card"><i>ϟ</i><b>افزایش قدرت</b><small>قوی‌تر شدن در تمرینات</small><em>✓</em></span></label>
+        </div>
+        <small class="error" id="goalError"></small>
+      </div>
+
+      <div class="form-divider"></div>
+
+      <div class="form-section">
+        <div class="section-title"><span class="section-icon">▤</span><div><h2>سطح تمرینت چقدره؟</h2><p>با توجه به تجربه فعلیت انتخاب کن.</p></div></div>
+        <div class="choice-row level-options">
+          <label class="choice"><input type="radio" name="level" value="beginner" checked><span><b>مبتدی</b><small>تازه شروع کردم</small></span></label>
+          <label class="choice"><input type="radio" name="level" value="intermediate"><span><b>متوسط</b><small>تجربه تمرین دارم</small></span></label>
+          <label class="choice"><input type="radio" name="level" value="advanced"><span><b>پیشرفته</b><small>تمرین منظم و حرفه‌ای</small></span></label>
+        </div>
+      </div>
+
+      <div class="form-divider"></div>
+      <div class="form-section">
+        <div class="section-title"><span class="section-icon">⌂</span><div><h2>کجا تمرین می‌کنی؟</h2><p>برنامه بر اساس امکاناتی که در دسترس داری تنظیم می‌شه.</p></div></div>
+        <div class="choice-row training-place-options">
+          <label class="choice"><input type="radio" name="training_place" value="gym" checked><span><b>باشگاه</b><small>دستگاه، هالتر و دمبل</small></span></label>
+          <label class="choice"><input type="radio" name="training_place" value="home"><span><b>خانه</b><small>وزن بدن و وسایل ساده</small></span></label>
+        </div>
+      </div>
+      <div class="form-divider"></div>
+      <div class="form-section">
+        <div class="section-title"><span class="section-icon">▦</span><div><h2>چند روز در هفته تمرین می‌کنی؟</h2><p>تعداد روزهایی که واقعاً می‌تونی به تمرین اختصاص بدی.</p></div></div>
+        <div class="days-picker" role="group" aria-label="تعداد روز تمرین در هفته">
+          <button type="button" class="day-option" data-days="2"><b>۲</b><small>روز</small></button>
+          <button type="button" class="day-option" data-days="3"><b>۳</b><small>روز</small></button>
+          <button type="button" class="day-option selected" data-days="4"><b>۴</b><small>روز</small></button>
+          <button type="button" class="day-option" data-days="5"><b>۵</b><small>روز</small></button>
+          <button type="button" class="day-option" data-days="6"><b>۶</b><small>روز</small></button>
+        </div>
+        <input type="hidden" id="trainingDays" name="training_days" value="4">
+      </div>
+
+      <div class="profile-note"><span>ⓘ</span><p>اطلاعاتت برای شخصی‌سازی برنامه استفاده می‌شه. اگر شرایط پزشکی یا آسیب‌دیدگی داری، قبل از شروع تمرین با متخصص مشورت کن.</p></div>
+      <div class="form-actions"><a href="register.html" class="back-button">مرحله قبل</a><button class="button button-primary continue-button" type="submit">ذخیره و مشاهده برنامه <span>←</span></button></div>
+      <p class="profile-message" id="profileMessage" role="status" aria-live="polite"></p>
+    </form>
+  </main>
+  <footer class="auth-footer"><span>© ۲۰۲۶ HamFit</span><span>قوی‌تر شو؛ با برنامه، با حام فیت.</span></footer>
+  <script src="js/auth.js"></script>
+  <script src="js/profile.js"></script>
+  <script src="js/motion.js" defer></script>
+</body>
+</html>
